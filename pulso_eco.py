@@ -1,7 +1,7 @@
 import csv
 from matplotlib import pyplot as plt
 
-filename = 'pulso.csv'
+filename = 'Copia_de_pulso_eco_tanque.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)

@@ -25,14 +25,14 @@ with open(filename) as f:
 
     result = []
 
-    for i in range((len(volts1)+len(volts2)) - 2 ):
+    for i in range((len(volts1)+len(volts2)) - 1 ):
         sample = 0
-        for j in range((len(volts2)-1),-1,-1):
+        for j in range(0,-len(volts2,-1)):
             if i - j < 0:
                 continue
-            if i - j > (len(volts1) - 1 ):
+            if i - j > len(volts1) - 1 :
                 continue
-            sample += volts2[j] * volts1[i-j]
+            sample += volts2[-j] * volts1[i-j]
         result.insert(i,sample)
 
     #Graficando informacion
@@ -46,4 +46,4 @@ with open(filename) as f:
     plt.ylabel("Value", fontsize=16)
     plt.tick_params(axis='both',which='major',labelsize=16)
 
-    #plt.show()
+    plt.show()
