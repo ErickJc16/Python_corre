@@ -19,5 +19,12 @@ while i < len(cars_minute) - window_size + 1:
 
 print(moving_average)
 
+fig = plt.figure(dpi=128,figsize=(10,6))
+plt.plot(range(len(cars_minute)),cars_minute,c='red')
+plt.plot(range(len(moving_average)),moving_average,c='blue')
 
-
+plt.title("Moving Average Filter", fontsize=20)
+plt.xlabel('',fontsize=16)
+fig.autofmt_xdate()
+plt.ylabel("Cars", fontsize=16)
+plt.tick_params(axis='both',which='major',labelsize=16)

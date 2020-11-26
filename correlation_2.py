@@ -1,6 +1,5 @@
 import csv
 from matplotlib import pyplot as plt
-import numpy as np
 
 filename = 'pulso.csv'
 with open(filename) as f:
@@ -27,17 +26,17 @@ with open(filename) as f:
 
     for i in range((len(volts1)+len(volts2)) - 1 ):
         sample = 0
-        for j in range(0,-len(volts2,-1)):
+        for j in range(0,-len(volts1),-1):
             if i - j < 0:
                 continue
-            if i - j > len(volts1) - 1 :
+            if i - j > len(volts2) - 1 :
                 continue
-            sample += volts2[-j] * volts1[i-j]
+            sample += volts1[-j] * volts2[i-j]
         result.insert(i,sample)
 
     #Graficando informacion
     fig = plt.figure(dpi=128, figsize=(10,6))
-    plt.plot(list(range((len(volts1)+len(volts2)) - 2 )),result, c= 'red')
+    plt.plot(list(range((len(volts1)+len(volts2)) - 1 )),result, c= 'red')
 
     #Formateando la grafica
     plt.title("Correlation", fontsize=20)
