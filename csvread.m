@@ -1,1 +1,0 @@
-x = csv2cell("pulso.csv",HL = 5 )

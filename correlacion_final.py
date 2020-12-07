@@ -7,9 +7,9 @@ Created on Thu Nov 19 14:54:11 2020
 """
 
 import numpy as np
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
-def correlacion(h,x):
+def correlacion(x,h):
     
     
     #Arreglo de salida de la correlacion
@@ -31,7 +31,9 @@ h = np.array([1,5,-8]) #Señal Enviada
 x = np.array([3,2,1,6,-7]) #Señal Recibida
 
 
-print(correlacion(h, x))
+print(correlacion(x, h))
+print(np.correlate(x,h,'full'))
+
 
 
         
